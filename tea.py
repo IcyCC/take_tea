@@ -30,6 +30,9 @@ async def index(request):
 async def get_tea(request):
     if request.method == 'GET':
         tea_id = request.args.get('id')
+        if tea_id is None:
+            teas = await Tea.all()
+            return Monk.jsonfy(result=[t.to_json() for t in teas])
         tea = await Tea.find_by(id=tea_id)
         if tea is None:
             return Monk.jsonfy(result=[])
