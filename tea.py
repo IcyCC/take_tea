@@ -65,4 +65,4 @@ async def get_answer(request):
     ans = [t.to_json() for t in teas if t.age_down < age < t.age_up]
     return app.jsonfy(result=ans)
 
-app.run()
+app.run(host='0.0.0.0', port=10086)
