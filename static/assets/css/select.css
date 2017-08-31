@@ -1,0 +1,24 @@
+.pricing .plan:hover, .pricing .plan.active{
+	height: 460px;
+}
+.section.white{
+	background-image: url("茶背景.png");
+	background-size: cover;
+}
+.p{
+	height: 460px;
+	width: 300px;
+	margin: 0 auto;
+}
+.p li{
+	list-style: none;
+	margin-top: 35px;
+}
+.p button{
+	width: 300px;
+	height: 50px;
+	background: 
+	border: none;
+	font-size: 20px;
+	font-weight: 3px;
+}

@@ -1,0 +1,288 @@
+.style {
+	width: 100%;height: 100%;
+}
+.picture{
+	float:right;
+	width:100%;
+	height:100%;
+}
+.text1 span{
+	position: absolute;
+	top: 165px;
+	left:180px;
+	width: 150px;
+	height: 50px;
+	background-color: #999;
+	font-size: 27px;
+	color: #212121;
+}
+.text1 span2{
+	position: absolute;
+	left: 180px;
+	top: 215px;
+	width: 150px;
+	height: 50px;
+	background-color: #999;
+	font-size: 27px;
+	color: #212121;
+}
+.text1 span3{
+	position: absolute;
+	left: 180px;
+	top: 265px;
+	width: 150px;
+	height: 50px;
+	background-color: #999;
+	font-size: 27px;
+	color: #212121;
+}
+.text1 span4{
+	position: absolute;
+	left: 180px;
+	top: 315px;
+	width: 150px;
+	height: 50px;
+	background-color: #999;
+	font-size: 27px;
+	color: #212121;
+}
+.aa{
+	font-size: 27px;
+	color: #212121;
+	text-decoration: none;
+	cursor: pointer;
+
+}
+.aa:HOVER{
+	font-size:35px; 
+	font-weight: bold;
+	color:#212121;
+	text-decoration: none;
+}
+.text2 {
+	float: center;
+	position: absolute;
+	height: 200px;
+	bottom: 250px;
+	left:1200px;
+	width: 600px;
+}
+.text2 e{
+	font-size: 130px;
+	color: #1B5E20;
+	text-shadow:2px 1px 1px #E0E0E0;
+}
+.text2 e1{
+	font-size: 120px;
+	color: #1B5E20;
+	font-family: 楷体;
+	text-shadow:2px 1px 1px #E0E0E0;
+}
+.text2 e2{
+	font-size: 50px;
+	color: #1B5E20;
+	text-shadow:1px 1px 1px #E0E0E0;
+}
+
+.input{
+	float: right;
+	width: 300px;
+	height: 20px;
+	position: relative;
+	top:-870px;
+	left:-90px;
+    border-radius:10px;
+}
+.input span
+{
+	background-color: #e7e7e7;
+	font-size: 20px;
+	color: #616161;
+}
+
+.seach{
+	font-size: 20px;
+}
+.seach span
+{
+   
+}
+
+.text{
+	float: right;
+	top: -820px;
+	width: 350px;
+	height: 40px;
+	left:220px;
+	position: relative;
+}
+.text span
+{
+	text-shadow:1px 1px 1px #212121;
+	color: #BDBDBD
+}
+.design{
+	font-size: 25px;
+	text-decoration: none;
+	cursor: pointer;
+	color: #BDBDBD
+}
+.design:HOVER
+{
+	font-size:27px; 
+	font-weight: bold;
+	color: #BDBDBD
+	text-decoration: none;
+}
+.footer{
+	position: absolute;
+	bottom: -580px;
+	height: 60px;
+	width: 100%;
+	background-color: #E0E0E0;
+}
+.footer e{
+	position: absolute;
+	left: 0px;
+	top: 20px;
+	width: 1620px;
+	height: 90px;
+	font-size: 18px;
+	font-family: 华文细黑;
+
+}
+.picture2{
+	position: absolute;
+	bottom: 300px;
+	left: 100px;
+}
+.picture3
+{
+	position: absolute;
+	bottom: 722px;
+	left: 250px;
+}
+.part1{
+	position: absolute;
+	top: 990px;
+	left:90px;
+	width:500px;
+	height: 300px;
+}
+.part1 e
+{
+	position: absolute;
+	font-size: 30px;
+	top:20px;
+	left:30px;
+	font-family: 微软雅黑 Light;
+}
+.part1 e1
+{
+	position: absolute;
+	font-size: 25px;
+	top:70px;
+	left:18px;
+	font-family: 方正姚体;
+}
+.part1 e2
+{
+	position: absolute;
+	font-size: 30px;
+	top:170px;
+	left:30px;
+	font-family: 微软雅黑 Light;
+}
+.part1 e3
+{
+	position: absolute;
+	font-size: 25px;
+	top:220px;
+	left:18px;
+	font-family: 方正姚体;
+}
+.part1 e4{
+	position: absolute;
+	top: 265px;
+	left: 260px;
+	font-family: 华文细黑;
+}
+
+.part3{
+	position: absolute;
+	top: 990px;
+	left:1350px;
+	width:500px;
+	height: 300px;
+}
+.part3 e1
+{
+	position: absolute;
+	font-size: 37px;
+	top:25px;
+	font-family: 华文隶书;
+}
+.part3 e
+{
+	position: absolute;
+	font-size: 25px;
+	top:85px;
+}
+.part3 e2{
+	position: absolute;
+	top:220px;
+	left:140px;
+	font-size: 18px;
+	font-family: 微软雅黑;
+}
+.class1
+{
+	font-size: 25px;
+	color: #78909C;
+	text-decoration: none;
+	cursor: pointer;
+}
+.class1:HOVER{ 
+	font-weight: bold;
+	color:#212121;
+}
+.carousel-control{
+	width:30px;
+	height: 60px;
+	margin-top:120px;
+}
+.carousel
+{
+	position: absolute;
+	width:500px;
+	height: 500px;
+	left:750px;
+	top:0px;
+}
+.slide
+{
+	position: absolute;
+	width:500px;
+	height: 500px;
+	left:750px;
+	top:1000px;
+}
+.carousel-caption h3
+{
+	position: absolute;
+	font-size: 45px;
+	top:-170px;
+	left:60px;
+	text-shadow:1px 1px 1px #212121;
+	font-family:华文行楷;
+}
+.carousel-caption p
+{
+	width: 380px;
+	left:-40px;
+	position: absolute;
+	top:-60px;
+	font-size: 18px;
+	text-shadow:1px 1px 1px #212121;
+	font-family: 华文楷体;
+}
