@@ -49,7 +49,7 @@ class Request:
         if self.method == "POST":
             content_type, parameters = parse_header(self.header.get('Content-Type'))
             if content_type == "application/x-www-form-urlencoded":
-                self.parsed_form = RequestDict(parse_qs(self.body))
+                self.parsed_form = RequestDict(parse_qs(self.body.decode('utf-8')))
         else:
             self.parsed_form = dict()
         return self.parsed_form

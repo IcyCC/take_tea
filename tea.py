@@ -36,7 +36,23 @@ async def get_tea(request):
         else:
             return Monk.jsonfy(result=[tea[0].to_json()])
 
-    return app.jsonfy()
+    if request.method == 'POST':
+        form = request.form
+        try:
+            d = dict(
+                name=form.get('name'),
+                taste=form.get('taste'),
+                function=form.get('function'),
+                age_up=form.get('age_up'),
+                age_down=form.get('age_down'),
+                taste_q=form.get('taste_q'),
+                function_q=form.get('function_q')
+            )
+            t = Tea(**d)
+            await t.save()
+        except Exception:
+            return app.jsonfy(status="fail")
+        return app.jsonfy(status="success")
 
 
 @app.route('/tea_answer', methods=['GET'])
