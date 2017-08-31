@@ -20,6 +20,12 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(conn.connection(loop=loop, **sql_config))
 
 
+@app.route('/', methods=['GET'])
+async def index(request):
+    resp = await app.file(file="index.html")
+    return resp
+
+
 @app.route("/tea", methods=['GET', 'POST'])
 async def get_tea(request):
     if request.method == 'GET':

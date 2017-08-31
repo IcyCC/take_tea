@@ -88,6 +88,16 @@ class Monk:
         else:
             return False
 
+    async def file(self, file):
+        path = self.config.static_path + '/' + file
+        path = os.path.abspath(path)
+        log.info("Static file read path {} ".format(path))
+        context = await read_file(path)
+        file_type = str(file).split('.')[-1]
+        resp = Response(body=context, version='1.1',
+                        content_type=TYPE_MAP.get(file_type, "text/plain"))
+        return resp
+
     def run(self, host="127.0.0.1", port=5000, time_out=60):
         server(host=host, port=port, request_handler=self.handle_request, request_timeout=time_out)
 
