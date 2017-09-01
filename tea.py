@@ -49,7 +49,8 @@ async def get_tea(request):
                 age_up=form.get('age_up'),
                 age_down=form.get('age_down'),
                 taste_q=form.get('taste_q'),
-                function_q=form.get('function_q')
+                function_q=form.get('function_q'),
+                image_url=form.get('image_url')
             )
             t = Tea(**d)
             await t.save()

@@ -11,6 +11,7 @@ class Tea(orm.Model):
     age_down = orm.Integer(default=0)
     taste_q = orm.String(legth=1024, default='')
     function_q = orm.String(legth=1024, default='')
+    image_url = orm.String(legth=512, default='')
 
     def to_json(self):
         return dict(
