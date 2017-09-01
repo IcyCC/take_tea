@@ -46,8 +46,8 @@ async def get_tea(request):
                 name=form.get('name'),
                 taste=form.get('taste'),
                 function=form.get('function'),
-                age_up=form.get('age_up'),
-                age_down=form.get('age_down'),
+                age_up=int(form.get('age_up')),
+                age_down=int(form.get('age_down')),
                 taste_q=form.get('taste_q'),
                 function_q=form.get('function_q'),
                 image_url=form.get('image_url')
