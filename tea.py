@@ -41,18 +41,21 @@ async def get_tea(request):
 
     if request.method == 'POST':
         form = request.form
-        d = dict(
-            name=form.get('name'),
-            taste=form.get('taste'),
-            function=form.get('function'),
-            age_up=int(form.get('age_up')),
-            age_down=int(form.get('age_down')),
-            taste_q=form.get('taste_q'),
-            function_q=form.get('function_q'),
-            image_url=form.get('image_url')
-        )
-        t = Tea(**d)
-        await t.save()
+        try:
+            d = dict(
+                name=form.get('name'),
+                taste=form.get('taste'),
+                function=form.get('function'),
+                age_up=int(form.get('age_up')),
+                age_down=int(form.get('age_down')),
+                taste_q=form.get('taste_q'),
+                function_q=form.get('function_q'),
+                image_url=form.get('image_url')
+            )
+            t = Tea(**d)
+            await t.save()
+        except Exception:
+            return app.jsonfy(status="fail")
         return app.jsonfy(status="success")
 
 
