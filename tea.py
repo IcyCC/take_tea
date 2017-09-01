@@ -66,7 +66,17 @@ async def get_answer(request):
     taste_q = args.get('taste')
     function_q = args.get('function')
     teas = await Tea.all()
-    ans = [t.to_json() for t in teas if t.age_down < age < t.age_up]
-    return app.jsonfy(result=ans)
+    ans = [t for t in teas if t.age_down < age < t.age_up]
+    if not ans:
+        return app.jsonfy(result=[], reason="Not match age")
+    if taste_q is not None:
+        ans = [t for t in ans if t.taste_q == taste_q]
+        if not ans:
+            return app.jsonfy(result=[], reason="Not match taste")
+    if function_q is not None:
+        ans = [t for t in ans if t.function_q == function_q]
+        if not ans:
+            return app.jsonfy(result=[], reason="Not match taste")
+    return app.jsonfy(result=[t.to_json() for t in ans])
 
 app.run(host='0.0.0.0', port=10086)
