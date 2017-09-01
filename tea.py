@@ -77,6 +77,6 @@ async def get_answer(request):
         ans = [t for t in ans if t.function_q == function_q]
         if not ans:
             return app.jsonfy(result=[], reason="Not match taste")
-    return app.jsonfy(result=[t.to_json() for t in ans])
+    return app.jsonfy(result=[t.to_json() for t in ans], reason='')
 
 app.run(host='0.0.0.0', port=10086)
