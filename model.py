@@ -22,6 +22,7 @@ class Tea(orm.Model):
             age_up=self.age_up,
             age_down=self.age_down,
             taste_q=self.taste_q,
-            function_q=self.function_q
+            function_q=self.function_q,
+            image_url=self.image_url
         )
 
