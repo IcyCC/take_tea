@@ -53,7 +53,6 @@ async def get_tea(request):
         )
         t = Tea(**d)
         await t.save()
-        return app.jsonfy(status="fail")
         return app.jsonfy(status="success")
 
 
