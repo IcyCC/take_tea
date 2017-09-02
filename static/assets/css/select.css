@@ -2,7 +2,7 @@
 	height: 460px;
 }
 .section.white{
-	background-image: url("茶背景.png");
+	/*background-image: url("assets/img/tea_background.png");*/
 	background-size: cover;
 }
 .p{

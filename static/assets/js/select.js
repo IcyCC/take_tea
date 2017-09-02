@@ -11,74 +11,72 @@ var a,b,c;
 }*/
 
 $(document).ready(function(){
-	/*
-	$("button").hover(function(){
-		$(this).css("background","#CDCDB4")
-	},function(){
-		$(this).css("background","none")
-	});*/
 
 	var cnt=0;
-$("#Q button").click(function(){
-		// $(this).css("background","#CDCDB4");
+	$("#Q button").click(function(){
+
 		switch(cnt){
 		case 0:
+			a = $(this).val();
 			$("#question").text("您期待的功效有...");
 			$("#button0").text("消脂减肥");
 			$("#button1").text("治疗便秘");
 			$("#button2").text("预防心血管疾病");
 			$("#button3").text("治疗肠胃不适，降火去燥");
+			$("#button0").attr( "value","消脂减肥");
+			$("#button1").attr( "value","治疗便秘");
+			$("#button2").attr( "value","预防心血管疾病");
+			$("#button3").attr( "value","治疗肠胃不适，降火去燥");
 			cnt++;
-			a = $(this).val();
 			break;
 		case 1:
-			// alert(b+"  " + cnt);
+			b = $(this).val();
 			$("#question").text("您期望的口味是...");
 			$("#button0").text("清爽");
 			$("#button1").text("微苦");
 			$("#button2").text("醇厚");
 			$("#button3").text("浓烈");
+			$("#button0").attr("value", "清爽");
+			$("#button1").attr("value", "微苦");
+			$("#button2").attr("value", "醇厚");
+			$("#button3").attr("value", "浓烈");
 			cnt++;
-			b = $(this).val();
 			
 			break;
 		case 2:
 			c = $(this).val();
-			// alert(cnt);
 			cnt=0;
 			$("#myModalLabel").text();
-			$("#des").text(a+b+c);
-			$('#myModal').modal('show');
 			$("#question").text("您的年龄阶段为...");
 			$("#button0").text("12-18");
 			$("#button1").text("18-40");
 			$("#button2").text("40-60");
 			$("#button3").text("65以上");
-			
+			$("#button0").attr("value","15");
+			$("#button1").attr("value", "20");
+			$("#button2").attr("value","50");
+			$("#button3").attr("value","61");
+			$.ajax({
+		        url : "/tea_answer",
+		        type : "get",
+		        dataType : "json",
+		        data : "age=" + a + "&function_q=" + b + "&taste_q=" + c,
+		        
+		        success : function(returnVal) {
+		        	var num = returnVal.result.length;
+		        	var index = Math.floor(Math.random()*num);
+		            $("#myModalLabel").text(returnVal.result[index].name);
+		            $("#des1").text(returnVal.result[index].taste);
+		            $("#des2").text(returnVal.result[index].function);
+		        }
+		        
+		    });
+			$('#myModal').modal('show');
 			break;
 		}
 	});
 
- 	// $("#Q2").hide();
- 	// $("#Q3").hide();
- 	// $(".REC1").hide();
 
- 	// $("button.A1").click(function(){
- 	// 	a = $(this).html();
- 	// 	$("#Q2").show();
- 	// });
- 	// $("button.A2").click(function(){
- 	// 	b = $(this).html();
- 	// 	$("#Q3").show();
- 	// });
- 	// $("button.A3").click(function(){
- 	// 	c =$(this).html();
-		// alert(a+b+c);
-		// $("#Q1").hide();
-		// $("#Q2").hide();
-		// $("#Q3").hide();
-		// $(".REC1").show();
- 	// });
 });
 
 /*$.ajax({
