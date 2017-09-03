@@ -98,8 +98,8 @@ class Monk:
                         content_type=TYPE_MAP.get(file_type, "text/plain"))
         return resp
 
-    def run(self, host="127.0.0.1", port=5000, time_out=1000):
-        server(host=host, port=port, request_handler=self.handle_request, request_timeout=time_out)
+    def run(self, host="127.0.0.1", port=5000, time_out=1000, loop=None):
+        server(host=host, port=port, request_handler=self.handle_request, request_timeout=time_out, loop=loop)
 
 
 

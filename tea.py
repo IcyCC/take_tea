@@ -2,6 +2,7 @@ from monk import Monk
 from model import Tea
 from monk_sqlalchemy import conn
 import asyncio
+import uvloop
 
 app = Monk()
 
@@ -16,7 +17,8 @@ sql_config = dict(host='127.0.0.1',
                   minsize=1,
                  )
 
-loop = asyncio.get_event_loop()
+loop = uvloop.new_event_loop()
+asyncio.set_event_loop(loop)
 loop.run_until_complete(conn.connection(loop=loop, **sql_config))
 
 
@@ -79,4 +81,4 @@ async def get_answer(request):
             return app.jsonfy(result=[], reason="Not match taste")
     return app.jsonfy(result=[t.to_json() for t in ans], reason='')
 
-app.run(host='0.0.0.0', port=10086)
+app.run(host='0.0.0.0', port=10086, loop=loop)
