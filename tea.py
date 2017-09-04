@@ -6,6 +6,7 @@ import uvloop
 
 app = Monk()
 
+
 sql_config = dict(host='127.0.0.1',
                   port=3306,
                   user='root',
@@ -17,8 +18,7 @@ sql_config = dict(host='127.0.0.1',
                   minsize=1,
                  )
 
-loop = uvloop.new_event_loop()
-asyncio.set_event_loop(loop)
+loop = asyncio.get_event_loop()
 loop.run_until_complete(conn.connection(loop=loop, **sql_config))
 
 
@@ -81,4 +81,4 @@ async def get_answer(request):
             return app.jsonfy(result=[], reason="Not match taste")
     return app.jsonfy(result=[t.to_json() for t in ans], reason='')
 
-app.run(host='0.0.0.0', port=10086, loop=loop)
+app.run(host='0.0.0.0', port=10086)

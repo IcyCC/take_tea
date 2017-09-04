@@ -99,7 +99,7 @@ class Monk:
         return resp
 
     def run(self, host="127.0.0.1", port=5000, time_out=1000, loop=None):
-        server(host=host, port=port, request_handler=self.handle_request, request_timeout=time_out, loop=loop)
+        server(host=host, port=port, request_handler=self.handle_request, request_timeout=time_out)
 
 
 
