@@ -2,6 +2,7 @@ from monk import Monk
 from model import Tea
 from monk_sqlalchemy import conn
 import asyncio
+import random
 import uvloop
 
 app = Monk()
@@ -80,5 +81,13 @@ async def get_answer(request):
         if not ans:
             return app.jsonfy(result=[], reason="Not match taste")
     return app.jsonfy(result=[t.to_json() for t in ans], reason='')
+
+
+@app.route("/get_daily_tea")
+async def get_random_tea(request):
+    teas = await Tea.all()
+    tea = random.choice(teas)
+    return app.jsonfy(result=[tea.to_json()], reason='')
+
 
 app.run(host='0.0.0.0', port=10086)
