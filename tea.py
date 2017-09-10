@@ -67,8 +67,8 @@ async def get_tea(request):
 async def get_answer(request):
     args = request.args
     age = int(args.get('age'))
-    taste_q = unquote(args.get('taste'))
-    function_q = unquote(args.get('function'))
+    taste_q = args.get('taste')
+    function_q = args.get('function')
     teas = await Tea.all()
     ans = [t for t in teas if t.age_down < age < t.age_up]
     if not ans:
